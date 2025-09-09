@@ -1,0 +1,22 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+table {
+    width: 100vw;
+    height: 100vh;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+td {
+    border: 1px solid black;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 2vw;
+}
+.firstcell {
+    background-color:aqua;
+}
+.secondcell {
+    background-color:red;
+}
