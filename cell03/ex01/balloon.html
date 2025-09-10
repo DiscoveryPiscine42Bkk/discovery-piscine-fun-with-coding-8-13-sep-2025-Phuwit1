@@ -4,13 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Balloon</title>
-    <style>
-
-    </style>
 </head>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    .balloon {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        border-radius: 50%;
+    }
+    .balloon:hover {
+        cursor: pointer;
+    }
+</style>
 <body>
-    <div class="balloon">
+    <div class="balloon" onclick="balloonClicked()" id="balloon">
 
     </div>
 </body>
 </html>
+<script>
+    const colorPool = ["red", "green", "blue"]
+    let pointer = 0;
+    let size = 200;
+    function balloonClicked() {
+        balloon = document.getElementById("balloon")
+        
+        size += 10;
+        if (size > 420) {
+            size = 200;
+            balloon.style.width = size + "px";
+            balloon.style.height = size + "px";
+        }
+        else {
+            balloon.style.width = size + "px";
+            balloon.style.height = size + "px";
+        }
+        
+
+        pointer += 1;
+        balloon.style.backgroundColor = colorPool[pointer % 3];
+
+    }
+
+    document.getElementById("balloon").addEventListener("mouseleave", () => {
+        size -= 5;
+        if (size < 200) {
+            size = 200;
+            balloon.style.width = size + "px";
+            balloon.style.height = size + "px";
+        }
+        else {
+            balloon.style.width = size + "px";
+            balloon.style.height = size + "px";
+        }
+        
+
+        pointer += 1;
+        balloon.style.backgroundColor = colorPool[pointer % 3];
+    })
+</script>
