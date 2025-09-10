@@ -1,0 +1,48 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.parallax {
+    height: 100vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section1 {
+    background-image: url("https://science.nasa.gov/wp-content/uploads/2023/09/swift_M31_mosaic_1600.webp");
+}
+
+.section2 {
+    background-image: url("https://www.innovationnewsnetwork.com/wp-content/uploads/2021/02/Primordial-galaxy-1024x576.jpg");
+}
+
+.black-block {
+    height: 60vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white; 
+    font-size: 2em;
+}
+
+.header {
+    color: white;
+    font-size: 3em;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    text-align: center;
+}
