@@ -30,10 +30,8 @@ function addTodo(text, save, loadMode = false) {
   });
 
   if (loadMode) {
-    // When loading from cookie → append at bottom
     list.appendChild(div);
   } else {
-    // When adding new → insert at top
     list.insertBefore(div, list.firstChild);
   }
 

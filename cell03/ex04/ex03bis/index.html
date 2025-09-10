@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini To-Do List</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="todo.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      height: 100vh;
+      margin: 0;
+      padding: 20px;
+      background: #f4f4f4;
+    }
+    #container {
+      width: 300px;
+    }
+    #newBtn {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 6px;
+      background: #007bff;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    #newBtn:hover {
+      background: #0056b3;
+    }
+    #ft_list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .todo {
+      padding: 10px;
+      background: white;
+      border-radius: 6px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .todo:hover {
+      transform: scale(1.02);
+      background: #f8f9fa;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <button id="newBtn">New</button>
+    <div id="ft_list"></div>
+  </div>
+
+  <script src="todo.js"></script>
+</body>
+</html>

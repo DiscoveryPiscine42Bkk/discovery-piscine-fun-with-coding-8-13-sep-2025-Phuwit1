@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balloon</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .balloon {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            border-radius: 50%;
+        }
+        .balloon:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="balloon" id="balloon"></div>
+
+    <script>
+        const colorPool = ["red", "green", "blue"];
+        let pointer = 0;
+        let size = 200;
+
+        $("#balloon").click(function () {
+            size += 10;
+            if (size > 420) {
+                size = 200;
+            }
+            pointer++;
+            $(this).css({
+                width: size + "px",
+                height: size + "px",
+                backgroundColor: colorPool[pointer % 3]
+            });
+        });
+
+        $("#balloon").mouseleave(function () {
+            size -= 5;
+            if (size < 200) {
+                size = 200;
+            }
+            $(this).css({
+                width: size + "px",
+                height: size + "px",
+                backgroundColor: colorPool[pointer % 3]
+            });
+            pointer += 2;
+        });
+    </script>
+</body>
+</html>
