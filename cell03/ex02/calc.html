@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #74ABE2, #5563DE);
+    }
+
+    .calculator {
+        border-radius: 20px;
+        width: 320px;
+        height: 420px;
+        background: #1e1e2f;
+        box-shadow: 0px 10px 25px rgba(0,0,0,0.3);
+        padding: 20px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .screen {
+        display: flex;
+        width: 100%;
+        height: 100px;
+        margin-bottom: 15px;
+        border-radius: 12px;
+        overflow: hidden;
+        background: #2c2c3c;
+        box-shadow: inset 0px 3px 6px rgba(0,0,0,0.4);
+    }
+
+    .leftscreen, .rightscreen {
+        flex: 1;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+    }
+
+    .leftscreen {
+        border-right: 2px solid rgba(255, 255, 255, 0.2);
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    .rightscreen {
+        background: rgba(255, 255, 255, 0.08);
+    }
+
+    input {
+        width: 90%;
+        height: 70%;
+        border: none;
+        outline: none;
+        font-size: 22px;
+        text-align: center;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.15);
+        color: #fff;
+        box-shadow: inset 0px 2px 5px rgba(0,0,0,0.4);
+    }
+
+    select {
+        width: 100%;
+        padding: 10px;
+        font-size: 20px;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        background: #2c2c3c;
+        color: #fff;
+        margin-bottom: 15px;
+        cursor: pointer;
+        box-shadow: inset 0px 3px 6px rgba(0,0,0,0.3);
+        transition: 0.3s;
+    }
+
+    select:hover {
+        background: #383850;
+    }
+
+    button {
+        width: 100%;
+        padding: 15px;
+        font-size: 20px;
+        font-weight: bold;
+        border-radius: 12px;
+        border: none;
+        outline: none;
+        background: linear-gradient(135deg, #74ABE2, #5563DE);
+        color: white;
+        cursor: pointer;
+        box-shadow: 0px 5px 12px rgba(0,0,0,0.3);
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    button:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 8px 16px rgba(0,0,0,0.4);
+    }
+</style>
+<body>
+    <div class="calculator">
+        <div class="screen">
+            <div class="leftscreen" >
+                <input id="leftscreen" type="number">
+            </div>
+            <div class="rightscreen">
+                <input id="rightscreen" type="number">
+            </div>
+        </div>
+        <div>
+            <select id="operation">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+                <option value="%">%</option>
+            </select>
+        </div>
+        <button onClick="calculation()">Try me!</button>
+    </div>
+</body>
+<script>
+    function calculation() {
+        const operation = document.getElementById("operation").value;
+        const left = document.getElementById("leftscreen").value;
+        const right = document.getElementById("rightscreen").value;
+        let result;
+        if (parseFloat(left) < 0 || parseFloat(right) < 0) {
+            alert("Error :(")
+            console.log("Error :(")
+        }
+        else{
+            switch (operation) {
+                case "+":
+                    result = parseFloat(left) + parseFloat(right);
+                    break;
+                case "-":
+                    result = parseFloat(left) - parseFloat(right);
+                    break;
+                case "*":
+                    result = parseFloat(left) * parseFloat(right);
+                    break;
+                case "/":
+                    if (right == 0) {
+                        alert("It’s over 9000!");
+                    }
+                    result = parseFloat(left) / parseFloat(right);
+                    break;
+                case "%":
+                    if (right == 0) {
+                        alert("It’s over 9000!");
+                    }
+                    result = parseFloat(left) % parseFloat(right);
+                    break;
+            }
+            console.log(result);
+        }
+        
+    }    
+    function showAlert() {
+        alert("Please, use me...");
+    }
+    setInterval(showAlert, 30000);
+</script>
+</html>
