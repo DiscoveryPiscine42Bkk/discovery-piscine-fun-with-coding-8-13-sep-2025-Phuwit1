@@ -4,10 +4,9 @@ $(document).ready(function () {
   const saved = getCookie("todos");
   if (saved) {
     const todos = JSON.parse(saved);
-    todos.forEach(todo => addTodo(todo, false, true)); // loadMode = true
+    todos.forEach(todo => addTodo(todo, false, true));
   }
 
-  // Add new todo button
   $("#newBtn").off("click").on("click", function () {
     const text = prompt("Enter a new TO DO:");
     if (text && text.trim() !== "") {
@@ -15,7 +14,6 @@ $(document).ready(function () {
     }
   });
 
-  // Function to add todo
   function addTodo(text, save, loadMode = false) {
     // Prevent duplicate
     if ($(".todo").filter(function() { return $(this).text() === text; }).length) return;
@@ -40,7 +38,7 @@ $(document).ready(function () {
     if (save) saveTodos();
   }
 
-  // Function to save todos to cookie
+
   function saveTodos() {
     const todos = [];
     $(".todo").each(function () {
@@ -49,7 +47,7 @@ $(document).ready(function () {
     setCookie("todos", JSON.stringify(todos), 7);
   }
 
-  // Cookie helper functions
+
   function setCookie(name, value, days) {
     const d = new Date();
     d.setTime(d.getTime() + days*24*60*60*1000);
