@@ -1,6 +1,5 @@
 $(document).ready(function () {
 
-  // Load saved todos on page load
   const saved = getCookie("todos");
   if (saved) {
     const todos = JSON.parse(saved);
@@ -15,7 +14,6 @@ $(document).ready(function () {
   });
 
   function addTodo(text, save, loadMode = false) {
-    // Prevent duplicate
     if ($(".todo").filter(function() { return $(this).text() === text; }).length) return;
 
     const $div = $("<div></div>")

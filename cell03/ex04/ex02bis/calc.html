@@ -141,34 +141,45 @@
             let right = $("#rightscreen").val();
             let result;
 
-            if (parseFloat(left) < 0 || parseFloat(right) < 0) {
+            if (parseInt(left) < 0 || parseInt(right) < 0) {
                 alert("Error :(");
                 console.log("Error :(");
             } else {
                 switch (operation) {
                     case "+":
-                        result = parseFloat(left) + parseFloat(right);
+                        result = parseInt(left) + parseInt(right);
+                        console.log(result);
                         break;
                     case "-":
-                        result = parseFloat(left) - parseFloat(right);
+                        result = parseInt(left) - parseInt(right);
+                        console.log(result);
                         break;
                     case "*":
-                        result = parseFloat(left) * parseFloat(right);
+                        result = parseInt(left) * parseInt(right);
+                        console.log(result);
                         break;
                     case "/":
                         if (right == 0) {
-                            alert("It’s over 9000!");
+                            result = ("It’s over 9000!");
+                            console.log("It’s over 9000!");
                         }
-                        result = parseFloat(left) / parseFloat(right);
+                        else {
+                            result = parseInt(left) / parseInt(right);
+                            console.log(result);
+                        }
                         break;
                     case "%":
                         if (right == 0) {
-                            alert("It’s over 9000!");
+                            result = ("It’s over 9000!");
+                            console.log("It’s over 9000!");
                         }
-                        result = parseFloat(left) % parseFloat(right);
+                        else {
+                            result = parseInt(left) % parseInt(right);
+                            console.log(result);
+                        }
                         break;
                 }
-                console.log(result);
+                alert(result);
             }
         });
 
