@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Space Profile • Sticky Navbar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: radial-gradient(circle at 50% -20%, #0b1022, #060a1a 50%, #040814 100%);
+      color: #e5e7eb;
+      font-family: system-ui, sans-serif;
+      min-height: 100vh;
+    }
+    body::before{
+      content:"";
+      position: fixed; inset: 0;
+      background: radial-gradient(1200px 600px at 50% -10%, rgba(99,102,241,.25), transparent 60%),
+                  radial-gradient(900px 500px at 10% 110%, rgba(56,189,248,.20), transparent 60%),
+                  radial-gradient(1000px 600px at 100% 20%, rgba(168,85,247,.18), transparent 60%);
+      filter: blur(2px);
+      pointer-events: none;
+    }
+    #nav-toggle { display:none; }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="text-gray-200">
+
+  <div class="fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 md:px-6 pt-4">
+      <input id="nav-toggle" type="checkbox" class="peer hidden"/>
+
+    
+      <div class="flex items-center gap-3 rounded-full px-3 py-2 sm:px-4 sm:py-3
+                  bg-white/10 backdrop-blur-xl border border-white/10 shadow-[0_8px_30px_rgba(2,6,23,.45)]">
+       
+        <a href="index.html" class="inline-flex items-center gap-2.5 px-2 py-1.5 rounded-xl hover:bg-white/5">
+          <span class="font-extrabold tracking-wide text-slate-50 text-3xl">Portfolio</span>
+        </a>
+
+        <div class="flex-1"></div>
+
+
+        <nav class="hidden md:flex items-center gap-7">
+          <a href="#about-me" class="text-slate-300 hover:text-white font-semibold text-[15px]">About Me</a>
+          <a href="#project" class="text-slate-300 hover:text-white font-semibold text-[15px]">Projects</a>
+          <a href="#skill" class="text-slate-300 hover:text-white font-semibold text-[15px]">Skill</a>
+          <a href="#contact" class="text-slate-300 hover:text-white font-semibold text-[15px]">Contact</a>
+        </nav>
+
+        <label for="nav-toggle"
+          class="md:hidden inline-flex items-center justify-center size-11 rounded-xl cursor-pointer hover:bg-white/5 ml-auto"
+          aria-controls="mobile-menu" aria-expanded="false">
+          <img src="https://cdn-icons-png.flaticon.com/512/1828/1828859.png" class="w-7 h-7 peer-checked:hidden">
+        </label>
+      </div>
+
+
+      <div id="mobile-menu" class="absolute left-0 right-0 mt-2 hidden peer-checked:block md:hidden">
+        <div class="max-w-6xl mx-auto px-4 md:px-6">
+          <div class="rounded-3xl p-3.5 bg-white/10 backdrop-blur-xl border border-white/10 shadow-[0_10px_30px_rgba(2,6,23,.6)]">
+            <nav class="flex flex-col gap-2">
+              <a href="#about-me" class="px-3 py-2 rounded-xl text-slate-200 hover:text-white hover:bg-white font-medium">About Me</a>
+              <a href="#project"  class="px-3 py-2 rounded-xl text-slate-200 hover:text-white hover:bg-white/10 font-medium">Projects</a>
+              <a href="#skill"    class="px-3 py-2 rounded-xl text-slate-200 hover:text-white hover:bg-white/10 font-medium">Skill</a>
+              <a href="#contact"  class="px-3 py-2 rounded-xl text-slate-200 hover:text-white hover:bg-white/10 font-medium">Contact</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="h-[92px]"></div>
+
+   <section id="about-me" class="relative text-center py-16">
+    <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
+
+    <div class="relative z-10 mt-16">
+      <img src="https://scontent.fbkk5-8.fna.fbcdn.net/v/t1.6435-9/110206564_1673689052793343_8611943667902688921_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=jNQWk5luvoMQ7kNvwGkBlmz&_nc_oc=AdlnEh2RU8Ig6R3rmwr0WXr65gmxqpq3uLGT7Tv2rSBIPjqgtfZF4VogSESOotdOIbc&_nc_zt=23&_nc_ht=scontent.fbkk5-8.fna&_nc_gid=9SKS5F8EsqG6HtN9DTq_6w&oh=00_AfZ7ierah37uiiXgT34-1fpgsIYCkVfc8ljHU1jqaDJyfg&oe=68EA2CCA"
+           alt="Profile Photo"
+           class="w-40 h-40 rounded-full mx-auto mb-4 border-4 border-purple-400 shadow-lg shadow-purple-700/40">
+      <h1 class="text-4xl font-extrabold text-white drop-shadow-lg">Phuwit Tangthawornsirikul</h1>
+      <p class="text-lg text-purple-300">King Mongkut’s Institute of Technology Ladkrabang</p>
+      <p class="text-lg text-purple-300">Full Stack Developer</p>
+    </div>
+  </section>
+
+  <section class="max-w-4xl mx-auto py-12 px-4 space-y-10" id="project">
+    <h2 class="text-3xl font-semibold text-center text-purple-200">My Project</h2>
+    <div class="space-y-6">
+      <a class="m-3" href="https://github.com/Phuwit1/RentMe" target="_blank">
+        <div class="bg-gradient-to-r from-purple-800/70 to-indigo-900/70 p-6 rounded-lg shadow-lg border border-purple-700/40">
+          <h3 class="text-xl font-bold text-white">RentMe</h3>
+          <p class="text-purple-300 text-sm mb-2">2024 - 2025</p>
+          <p>Developed and maintained a full-stack rental platform using Next.js, Node.js, and PostgreSQL. Integrated Stripe for secure payment processing and implemented user authentication with NextAuth.js.. Utilized Prisma ORM for efficient database management and collaborated on scalable architecture and admin role-based access control.</p>
+        </div>
+      </a>
+      <a class="m-3" href="https://github.com/Phuwit1/J3K_Tracking" target="_blank">
+        <div class="bg-gradient-to-r from-purple-800/70 to-indigo-900/70 p-6 rounded-lg shadow-lg border border-purple-700/40">
+          <h3 class="text-xl font-bold text-white">J3K Tracking</h3>
+          <p class="text-purple-300 text-sm mb-2">2024 - 2025</p>
+          <p>Developed and maintained a full-stack parcel tracking system using Next.js, Express, and PostgreSQL. Implemented real-time location updates, email notifications, and user authentication with NextAuth.js.. Utilized Prisma ORM for database management and integrated third-party services including Twilio and Nodemailer for enhanced communication features.</p>
+        </div>
+      </a>
+      <a class="m-3" href="https://github.com/Phuwit1/serverside-project" target="_blank">
+        <div class="bg-gradient-to-r from-purple-800/70 to-indigo-900/70 p-6 rounded-lg shadow-lg border border-purple-700/40">
+          <h3 class="text-xl font-bold text-white">kinkhaw_rueyang</h3>
+          <p class="text-purple-300 text-sm mb-2">2023 - 2024</p>
+          <p>Developed and maintained a server-side web application using Django and PostgreSQL. Implemented modular features for authentication, cart management, and staff operations. Collaborated with team members to integrate media handling and streamline backend workflows for scalable deployment.</p>
+        </div>
+      </a>
+      <a class="m-3" href="https://github.com/Pooh303/WebPro" target="_blank">
+        <div class="bg-gradient-to-r from-purple-800/70 to-indigo-900/70 p-6 rounded-lg shadow-lg border border-purple-700/40">
+          <h3 class="text-xl font-bold text-white">WebPro</h3>
+          <p class="text-purple-300 text-sm mb-2">2023 - 2024</p>
+          <p>Developed and maintained a web-based restaurant management system using PHP, JavaScript, and PostgreSQL. Implemented features for dashboard control, menu ordering, and staff coordination. Collaborated with team members to enhance modular components and streamline backend operations for scalable deployment.</p>
+        </div>
+      </a>
+      <a class="m-3" href="https://github.com/Krit789/Filesystem-1" target="_blank">
+        <div class="bg-gradient-to-r from-purple-800/70 to-indigo-900/70 p-6 rounded-lg shadow-lg border border-purple-700/40">
+          <h3 class="text-xl font-bold text-white">Filesystem-1</h3>
+          <p class="text-purple-300 text-sm mb-2">2023 - 2024</p>
+          <p>Developed and maintained a Linux-based file system analysis tool using Bash and Markdown. Organized and documented core components including volume administration, raw media handling, and backup/restore utilities. Collaborated with team members to structure content around Filesystem Hierarchy Standard (FHS) and streamline educational resources for scalable deployment.</p>
+        </div>
+      </a>
+      <a class="m-3" href="https://github.com/amesupakorn/PhyCom" target="_blank">
+        <div class="bg-gradient-to-r from-purple-800/70 to-indigo-900/70 p-6 rounded-lg shadow-lg border border-purple-700/40">
+          <h3 class="text-xl font-bold text-white">Tetris Battle Game</h3>
+          <p class="text-purple-300 text-sm mb-2">2022 - 2023</p>
+          <p>Developed a command-line Tetris game using C, tailored for both Windows and macOS environments. Implemented single and multiplayer modes to enhance problem-solving, adaptability, and teamwork skills. Collaborated with peers to design gameplay mechanics that foster strategic thinking and real-time decision-making.</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="relative max-w-6xl mx-auto py-10 px-4">
+    <h2 class="text-3xl font-semibold mb-6 text-center text-purple-200" id="skill">Skills</h2>
+
+    <button id="skillPrev"
+      class="absolute left-2 top-1/2 -translate-y-1/2 z-10 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 p-2 backdrop-blur transition hidden md:block"
+    >
+      ◀
+    </button>
+
+    <button id="skillNext"
+      class="absolute right-2 top-1/2 -translate-y-1/2 z-10 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 p-2 backdrop-blur transition hidden md:block"
+    >
+      ▶
+    </button>
+
+    <div id="skillTrack"
+        class="flex gap-5 overflow-x-auto pb-2  scroll-smooth
+                [scrollbar-color:theme(colors.purple.600)_transparent] [scrollbar-width:thin]">
+    </div>
+  </section>
+
+
+
+
+  <section class="bg-gradient-to-r from-indigo-900 to-purple-900 py-12">
+    <div class="max-w-3xl mx-auto text-center" id="contact">
+      <h2 class="text-3xl font-semibold text-purple-100 mb-6" >Contact Me</h2>
+    <div class="flex justify-center flex-wrap gap-8 text-lg">
+
+        <a href="https://www.instagram.com/kinnykry/" target="_blank"
+          class="text-purple-300 hover:text-white transition flex items-center gap-2">
+          <image src="./logo/instagram.jpg" alt="Instagram" class="w-[100%] h-6 rounded-xl"/>
+          <span>Instagram</span>
+        </a>
+
+        <a href="https://github.com/Phuwit1" target="_blank"
+          class="text-purple-300 hover:text-white transition flex items-center gap-2">
+          <image src="https://tse1.mm.bing.net/th/id/OIP.rqiJLvGimA1GTgNJYKyqLwHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="GitHub" class="w-[100%] h-6 rounded-xl"/> 
+          <span>GitHub</span>
+        </a>
+
+        <a href="https://www.facebook.com/kinichi.tkul/" target="_blank"
+          class="text-purple-300 hover:text-white transition flex items-center gap-2">
+          <image src="https://tse2.mm.bing.net/th/id/OIP.B64O85qcCdcTN6ozrnJgzQHaHa?r=0&w=720&h=720&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Facebook" class="w-[100%] h-6 rounded-xl"/>
+          <span>Facebook</span>
+        </a>
+
+        <a href="https://www.linkedin.com/in/phuwit-tangthawornsirikul-13167b372/" target="_blank"
+          class="text-purple-300 hover:text-white transition flex items-center gap-2">
+          <image src="https://logolook.net/wp-content/uploads/2021/06/Linkedin-Logo-2003.png" alt="LinkedIn" class="w-[100%] h-6 rounded-xl"/>
+          <span>LinkedIn</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+<script src="./skill/skillsptang.js" ></script>
+
+</body>
+</html>

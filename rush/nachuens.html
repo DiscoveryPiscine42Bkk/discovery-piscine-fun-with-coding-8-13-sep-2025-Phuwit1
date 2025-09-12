@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Space Profile • Sticky Navbar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: radial-gradient(circle at 50% -20%, #0b1022, #060a1a 50%, #040814 100%);
+      color: #e5e7eb;
+      font-family: system-ui, sans-serif;
+      min-height: 100vh;
+    }
+    body::before{
+      content:"";
+      position: fixed; inset: 0;
+      background: radial-gradient(1200px 600px at 50% -10%, rgba(99,102,241,.25), transparent 60%),
+                  radial-gradient(900px 500px at 10% 110%, rgba(56,189,248,.20), transparent 60%),
+                  radial-gradient(1000px 600px at 100% 20%, rgba(168,85,247,.18), transparent 60%);
+      filter: blur(2px);
+      pointer-events: none;
+    }
+    #nav-toggle { display:none; }
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="text-gray-200">
+
+
+  <div class="fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 md:px-6 pt-4">
+      <input id="nav-toggle" type="checkbox" class="peer hidden"/>
+      <div class="flex items-center gap-3 rounded-full px-3 py-2 sm:px-4 sm:py-3
+                  bg-white/10 backdrop-blur-xl border border-white/10 shadow-[0_8px_30px_rgba(2,6,23,.45)]">
+       
+        <a href="index.html" class="inline-flex items-center gap-2.5 px-2 py-1.5 rounded-xl hover:bg-white/5">
+          <span class="font-extrabold tracking-wide text-slate-50 text-3xl">Portfolio</span>
+        </a>
+
+        <div class="flex-1"></div>
+
+
+        <nav class="hidden md:flex items-center gap-7">
+          <a href="#about-me" class="text-slate-300 hover:text-white font-semibold text-[15px]">About Me</a>
+          <a href="#project" class="text-slate-300 hover:text-white font-semibold text-[15px]">Projects</a>
+          <a href="#skill" class="text-slate-300 hover:text-white font-semibold text-[15px]">Skill</a>
+          <a href="#contact" class="text-slate-300 hover:text-white font-semibold text-[15px]">Contact</a>
+        </nav>
+
+        <label for="nav-toggle"
+          class="md:hidden inline-flex items-center justify-center size-11 rounded-xl cursor-pointer hover:bg-white/5 ml-auto"
+          aria-controls="mobile-menu" aria-expanded="false">
+          <img src="https://cdn-icons-png.flaticon.com/512/1828/1828859.png" class="w-7 h-7 peer-checked:hidden">
+        </label>
+      </div>
+
+      <div id="mobile-menu" class="absolute left-0 right-0 mt-2 hidden peer-checked:block md:hidden">
+        <div class="max-w-6xl mx-auto px-4 md:px-6">
+          <div class="rounded-3xl p-3.5 bg-white/10 backdrop-blur-xl border border-white/10 ">
+            <nav class="flex flex-col gap-2">
+              <a href="#about-me" class="px-3 py-2 rounded-xl text-slate-200 hover:text-white hover:bg-white/10 font-medium">About Me</a>
+              <a href="#project"  class="px-3 py-2 rounded-xl text-slate-200 hover:text-white hover:bg-white/10 font-medium">Projects</a>
+              <a href="#skill"    class="px-3 py-2 rounded-xl text-slate-200 hover:text-white hover:bg-white/10 font-medium">Skill</a>
+              <a href="#contact"  class="px-3 py-2 rounded-xl text-slate-200 hover:text-white hover:bg-white/10 font-medium">Contact</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="h-[92px]"></div>
+
+  <section class="relative text-center py-16">
+    <div class="relative z-10" id="about-me">
+      <img src="./image/1757516878777.jpg" class="w-40 h-40 rounded-full mx-auto mb-4 border-4 border-purple-400 shadow-lg shadow-purple-700/40">
+
+      <h1 class="text-4xl font-extrabold text-white drop-shadow-lg">Natthapong Chuensukprasong</h1>
+      <p class="text-lg text-purple-300">King Mongkut’s Institute of Technology Ladkrabang</p>
+      <p class="text-lg text-purple-300">Full Stack Developer</p>
+    </div>
+  </section>
+
+  <section class="max-w-4xl mx-auto py-12 px-4 space-y-10" id="project">
+    <h2 class="text-3xl font-semibold text-center text-purple-200">My Project</h2>
+    <div class="space-y-6">
+      <a class="m-3" href="https://github.com/Guyynatthapong/Ohyummy" target="_blank">
+        <div class="bg-gradient-to-r from-purple-800/70 to-indigo-900/70 p-6 rounded-lg shadow-lg border border-purple-700/40">
+          <h3 class="text-xl font-bold text-white">Ohyummy</h3>
+          <p class="text-purple-300 text-sm mb-2">Feb 2024 - Mar 2024</p>
+          <p>Ohyummy is a web application built with PHP. It allows users to reserve tables, order food, and pay
+          for their meals online. Customers can easily place orders and make payments through the app. The
+          admin dashboard allows restaurant managers to manage reservations, track orders, and view
+          customer data.
+          </p>
+        </div>
+      </a>
+      <a class="m-3" href="https://github.com/Guyynatthapong/FlowhealthWay" target="_blank">
+        <div class="bg-gradient-to-r from-purple-800/70 to-indigo-900/70 p-6 rounded-lg shadow-lg border border-purple-700/40">
+          <h3 class="text-xl font-bold text-white">FlowhealthWay</h3>
+          <p class="text-purple-300 text-sm mb-2">Sep 2024 - Oct 2024</p>
+          <p>Rentme is a web app I built using Next.js for both frontend and backend. Users can book rental cars
+          and pay online. I also built an admin page where staff can create, update, and delete car listings.</p>
+        </div>
+      </a>
+      <a class="m-3" href="https://github.com/Guyynatthapong/RentMe" target="_blank">
+        <div class="bg-gradient-to-r from-purple-800/70 to-indigo-900/70 p-6 rounded-lg shadow-lg border border-purple-700/40">
+          <h3 class="text-xl font-bold text-white">RentMe</h3>
+          <p class="text-purple-300 text-sm mb-2">Feb 2025 - Mar 2025</p>
+          <p>Rentme is a web app I built using Next.js for both frontend and backend. Users can book rental cars
+          and pay online. I also built an admin page where staff can create, update, and delete car listings.</p>
+        </div>
+      </a>
+      
+    </div>
+  </section>
+
+  <section class="relative max-w-6xl mx-auto py-10 px-4">
+    <h2 class="text-3xl font-semibold mb-6 text-center text-purple-200" id="skill">Skills</h2>
+
+    <button id="skillPrev"
+      class="absolute left-2 top-1/2 -translate-y-1/2 z-10 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 p-2 backdrop-blur transition hidden md:block"
+    >
+      ◀
+    </button>
+
+    <button id="skillNext"
+      class="absolute right-2 top-1/2 -translate-y-1/2 z-10 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 p-2 backdrop-blur transition hidden md:block"
+    >
+      ▶
+    </button>
+
+    <div id="skillTrack"
+        class="flex gap-5 overflow-x-auto pb-2 snap-x snap-mandatory scroll-smooth
+                [scrollbar-color:theme(colors.purple.600)_transparent] [scrollbar-width:thin]">
+    </div>
+  </section>
+
+
+
+
+  <section class="bg-gradient-to-r from-indigo-900 to-purple-900 py-12">
+    <div class="max-w-3xl mx-auto text-center" id="contact">
+      <h2 class="text-3xl font-semibold text-purple-100 mb-6" >Contact Me</h2>
+      
+      <div class="flex justify-center flex-wrap gap-8 text-lg">
+
+        <a href="https://www.instagram.com/guyntp.__/" target="_blank"
+          class="text-purple-300 hover:text-white transition flex items-center gap-2">
+          <image src="./logo/instagram.jpg" alt="Instagram" class="w-[100%] h-6 rounded-xl"/>
+          <span>Instagram</span>
+        </a>
+
+        <a href="https://github.com/Guyynatthapong" target="_blank"
+          class="text-purple-300 hover:text-white transition flex items-center gap-2">
+          <image src="https://tse1.mm.bing.net/th/id/OIP.rqiJLvGimA1GTgNJYKyqLwHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="GitHub" class="w-[100%] h-6 rounded-xl"/> 
+          <span>GitHub</span>
+        </a>
+
+        <a href="https://www.facebook.com/nath.phngs.chun.sukh.prasngkh" target="_blank"
+          class="text-purple-300 hover:text-white transition flex items-center gap-2">
+          <image src="https://tse2.mm.bing.net/th/id/OIP.B64O85qcCdcTN6ozrnJgzQHaHa?r=0&w=720&h=720&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Facebook" class="w-[100%] h-6 rounded-xl"/>
+          <span>Facebook</span>
+        </a>
+
+        <a href="https://www.linkedin.com" target="_blank"
+          class="text-purple-300 hover:text-white transition flex items-center gap-2">
+          <image src="https://logolook.net/wp-content/uploads/2021/06/Linkedin-Logo-2003.png" alt="LinkedIn" class="w-[100%] h-6 rounded-xl"/>
+          <span>LinkedIn</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+<script src="./skill/skillsnachu.js" ></script>
+
+</body>
+</html>
